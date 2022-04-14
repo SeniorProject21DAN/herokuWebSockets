@@ -201,9 +201,9 @@ wss.on("connection", function connection(ws) {
 //     res.send("Hello World!");
 // });
 
-wss.listen(PORT, () => {
-    console.log("Listening to port PORT");
-});
+// wss.listen(PORT, () => {
+//     console.log("Listening to port PORT");
+// });
 
 function hostExists(name) {
     for (let i = 0; i < hostList.length; i += 1) {

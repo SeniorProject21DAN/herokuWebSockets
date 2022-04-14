@@ -23,11 +23,11 @@ const { Server } = require('ws');
 const PORT = process.env.PORT || 8080;
 const INDEX = '/index.html';
 
-const app = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+const server = express()
+//   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-const wss = new Server({ app });
+const wss = new Server({ server });
 
 
 // Single dimension array storing name of host, used for host setup and client setup 
@@ -197,11 +197,11 @@ wss.on("connection", function connection(ws) {
     });
 });
 
-app.get("/", (req, res) => {
+server.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-server.listen(PORT, () => {
+wss.listen(PORT, () => {
     console.log("Listening to port PORT");
 });
 

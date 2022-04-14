@@ -186,7 +186,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-server.listen(8080, () => {
+server.listen(process.env.PORT || 8080, () => {
     console.log("Listening to port 8080");
 });
 

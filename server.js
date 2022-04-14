@@ -10,26 +10,17 @@
  * <role> h=host, c=client
  */
 
-//https://devcenter.heroku.com/articles/node-websockets
-const PORT = process.env.PORT || 3000;
-const INDEX = '/index.html';
-
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
 const express = require("express");
 const app = express();
-const http = require("https");
-const WebSocket = require("wss");
-
+const http = require("http");
+const WebSocket = require("ws");
 
 // Single dimension array storing name of host, used for host setup and client setup 
 const hostList = new Array();
 // Two dimensional array storing websocket address of host in [0] and of connected client n in [n]
 const connections = new Array();
 
-// const server = http.createServer(app);
+const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 // WORK TO BE DONE:

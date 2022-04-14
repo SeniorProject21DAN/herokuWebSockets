@@ -15,7 +15,7 @@
 // const http = require("http");
 // const WebSocket = require("ws");
 
-'use strict';
+// 'use strict';
 
 const express = require('express');
 const { Server } = require('ws');

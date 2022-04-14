@@ -16,11 +16,11 @@
 // const WebSocket = require("ws");
 
 // 'use strict';
-
+//https://devcenter.heroku.com/articles/node-websockets
 const express = require('express');
 const { Server } = require('ws');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const INDEX = '/index.html';
 
 const app = express()
@@ -201,8 +201,8 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-server.listen(process.env.PORT || 8080, () => {
-    console.log("Listening to port 8080");
+server.listen(PORT, () => {
+    console.log("Listening to port PORT");
 });
 
 function hostExists(name) {
